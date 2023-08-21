@@ -32,7 +32,7 @@
 // console.log(range(-5, 2, 3));
 
 const lastIndexOf = function(array, elem){
-  for (let i = array.length  - 1; i > 0; i--){
+  for (let i = array.length  - 1; i >= 0; i--){
     //console.log(i)
     if (array[i] == elem){
       return i

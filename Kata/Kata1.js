@@ -4,18 +4,21 @@
     "Array Operations and Properties", and "Looping Over Arrays". 
     JavaScript does have some built-in helper functions for working with arrays such as .sort, .map, .filter, and others, 
     but it is highly recommended to avoid those functions while working through the prep katas.
-
-
-
 */ 
 
 const sumLargestNumbers = function(data) {
-    // Put your solution here
-  };
-  
+    data.sort((a,b) => b - a); //Sorts by number descending, invert for ascending
+    if (data.length >= 2){
+      return data[0] + data[1];
+    } else{
+      return 0;
+    }
+  }
+
 console.log(sumLargestNumbers([1, 10]));
 console.log(sumLargestNumbers([1, 2, 3]));
 console.log(sumLargestNumbers([10, 4, 34, 6, 92, 2]));
+console.log(sumLargestNumbers([]));
 
 /*
    11

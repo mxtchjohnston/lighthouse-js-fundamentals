@@ -1,5 +1,9 @@
 const instructorWithLongestName = function (instructors) {
-    // Put your solution here
+    instructors.sort((a, b) =>{
+      return b.name.length - a.name.length; // Sorts based on name length descending
+    });
+
+    return instructors[0];
   };
   
 console.log(

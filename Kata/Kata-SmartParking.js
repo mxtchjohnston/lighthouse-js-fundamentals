@@ -23,8 +23,30 @@ Your function must return an array with the coordinates of the spot as an [X, Y]
 See the example input and output below for an illustration.
 */
 
-const whereCanIPark = function (spots, vehicle) {
-    // Code here!
+const whereCanIPark = function (spots, vehicle) { // [X, Y] | false
+    const options = {
+      "regular": ['R'],
+      "small": ['S', 'R'], // Prefer small to regular 
+      "motorcycle": ['M','S','R'] //prefer motorcycle to small to regular
+    }
+
+    const vehicleOptions = options[vehicle];
+    console.log(vehicleOptions);
+    let answer = false;
+
+    vehicleOptions.forEach(element => { //unpacking and testing options in order
+      console.log("looking for ", element);
+      for (let y = 0; y < spots.length; y++){ //rows are layed out first in memory
+        for (let x = 0; x < spots[y].length; x++){ // columns are second order elements in memory
+          if(spots[y][x] === element){
+            answer = [x,y];
+            break;
+          }
+        }
+      }
+    });
+
+    return answer; 
   };
   
 console.log(whereCanIPark(

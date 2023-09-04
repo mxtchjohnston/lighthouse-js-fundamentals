@@ -8,7 +8,13 @@ Your function must return Polluted if there are too many dirty air samples, or C
 */
 
 const checkAir = function (samples, threshold) {
-    // Code here!
+    let sumPolluted = 0;
+    samples.forEach(element => {
+      (element === "dirty") ? sumPolluted++ : '';
+    });
+
+    let ratio = sumPolluted / samples.length;
+    return (ratio > threshold) ? "Polluted" : "Clean";
   };
   
 

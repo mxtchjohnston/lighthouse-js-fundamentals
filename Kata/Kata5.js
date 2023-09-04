@@ -1,5 +1,6 @@
+// text . split (' ') . join ('%20')
 const urlEncode = function(text) {
-    // Put your solution here
+    return text.split(' ').join('%20');
   };
   
 console.log(urlEncode("Lighthouse Labs"));
